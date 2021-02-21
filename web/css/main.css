@@ -1,0 +1,14 @@
+.board {
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tiles {
+    background-color: aliceblue;
+    border-color: cadetblue;
+    border-width: thick;
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    cursor: pointer;
+}
