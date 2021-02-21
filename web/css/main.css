@@ -11,4 +11,9 @@
     height: 50px;
     border-style: solid;
     cursor: pointer;
+    text-align: center;
+}
+
+.tanda{
+    text-align: center;
 }
