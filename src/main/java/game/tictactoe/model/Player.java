@@ -2,7 +2,15 @@ package game.tictactoe.model;
 
 public class Player {
     private String name;
-    private char type;
+    private String type;
+
+    public Player() {
+    }
+
+    public Player(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
 
     public String getName() {
         return name;
@@ -12,11 +20,11 @@ public class Player {
         this.name = name;
     }
 
-    public char getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(char type) {
+    public void setType(String type) {
         this.type = type;
     }
 }

@@ -7,4 +7,8 @@
         <servlet-name>GameServlet</servlet-name>
         <servlet-class>game.tictactoe.controller.GameServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PlayerTurnServlet</servlet-name>
+        <servlet-class>game.tictactoe.controller.PlayerTurnServlet</servlet-class>
+    </servlet>
 </web-app>

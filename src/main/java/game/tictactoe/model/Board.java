@@ -1,13 +1,17 @@
 package game.tictactoe.model;
 
 public class Board {
-    private char[][] size;
+    private String[][] size;
 
-    public char[][] getSize() {
+    public Board(String[][] size) {
+        this.size = size;
+    }
+
+    public String[][] getSize() {
         return size;
     }
 
-    public void setSize(char[][] size) {
+    public void setSize(String[][] size) {
         this.size = size;
     }
 }
