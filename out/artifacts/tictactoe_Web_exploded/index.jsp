@@ -21,24 +21,24 @@
                 <div class="card-body">
                     <form name="gameForm" method="post" action="new-game">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="single" value="single" onclick="singlePlayer()" checked>
-                            <label class="form-check-label" for="single">Single Player</label>
+                            <input class="form-check-input" type="radio" name="mode" value="single" onclick="singlePlayer()" disabled>
+                            <label class="form-check-label" >Single Player</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="multi" value="multi" onclick="multiPlayer()">
-                            <label class="form-check-label" for="multi">Multi Player</label>
+                            <input class="form-check-input" type="radio" name="mode" value="multi" onclick="multiPlayer()" checked>
+                            <label class="form-check-label" >Multi Player</label>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="inputPlayer1" class="col-form-label">Player 1</label>
                             <div class="col">
-                                <input type="text" class="form-control" id="inputPlayer1" placeholder="Player 1" name="player1">
+                                <input type="text" class="form-control" id="inputPlayer1" placeholder="Player name" name="player1">
                             </div>
                         </div>
                         <div class="form-group" id="formPlayer2" style="display: none">
                             <label for="inputPlayer2" class="col-form-label">Player 2</label>
                             <div class="col">
-                                <input type="text" class="form-control" id="inputPlayer2" placeholder="Player 2" name="player2">
+                                <input type="text" class="form-control" id="inputPlayer2" placeholder="Player name" name="player2">
                             </div>
                         </div>
                         <br>
@@ -57,25 +57,6 @@
         </div>
     </div>
 </div>
-<!--<div class="container">-->
-<!--<table class="board">-->
-<!--<tr>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--<td class="tiles"></td>-->
-<!--</tr>-->
-<!--</table>-->
-<!--</div>-->
 
 <script>
     var slider = document.getElementById("boardSizeSlider");

@@ -13,10 +13,11 @@ public class GameServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String player1 = request.getParameter("player1");
         String player2 = request.getParameter("player2");
+        String mode = request.getParameter("mode");
         Integer boardSize = Integer.valueOf(request.getParameter("boardSize"));
 
         GameService gameService = new GameService();
-        Game game = gameService.createGame(player1, player2, boardSize);
+        Game game = gameService.createGame(player1, player2, boardSize, mode);
         request.getSession().setAttribute("game", game);
         RequestDispatcher rd=request.getRequestDispatcher("/game.jsp");
         rd.forward(request, response);

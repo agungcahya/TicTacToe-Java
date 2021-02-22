@@ -21,9 +21,14 @@
     <div class="row">
         <div class="col-sm-6  mx-auto">
             <h1 align="center">Tic Tac Toe!</h1>
-            <p align="center">${game.activePlayer.name} turn!</p>
-            <p align="center">${game.winner.name} !</p>
-            <div class="container">
+            <div class="container" style="margin-top: 50px; text-align: center">
+
+                <c:if test="${game.winner.name == null}">
+                    <h3 align="center">${game.activePlayer.name} turn!</h3>
+                </c:if>
+                <c:if test="${game.winner.name != null}">
+                    <h3 align="center">${game.winner.name} WIN!</h3>
+                </c:if>
                 <form id="turnForm" method="post" action="turn">
                     <input type="hidden" id="rowPosition" name="rowPosition">
                     <input type="hidden" id="colPosition" name="colPosition">
@@ -31,17 +36,24 @@
                         <c:forEach items="${game.board.size}" var="row" varStatus="dataRow">
                             <tr>
                                 <c:forEach items="${row}" var="col" varStatus="dataCol">
-                                    <c:if test="${col == null}">
-                                        <td class="tiles" onclick="playerTurn(${dataRow.index}, ${dataCol.index})"><h2>${col  }</h2></td>
+                                    <c:if test="${col == null && game.winner.name == null}">
+                                        <td class="tiles" onclick="playerTurn(${dataRow.index}, ${dataCol.index})"><h2>${col}</h2></td>
+                                    </c:if>
+                                    <c:if test="${col == null && game.winner.name != null}">
+                                        <td class="tiles" ><h2>${col}</h2></td>
                                     </c:if>
                                     <c:if test="${col != null}">
-                                        <td class="tiles" ><h2>${col  }</h2></td>
+                                        <td class="tiles" ><h2>${col}</h2></td>
                                     </c:if>
                                 </c:forEach>
                             </tr>
                         </c:forEach>
                     </table>
                 </form>
+                <br>
+                <c:if test="${game.winner.name != null}">
+                    <button type="submit" class="btn btn-primary" onclick="openPage('index.jsp')">New Game</button>
+                </c:if>
             </div>
         </div>
     </div>
@@ -53,7 +65,9 @@
         document.getElementById("rowPosition").value = row;
         document.getElementById("colPosition").value = col;
         document.getElementById("turnForm").submit();
-
+    }
+    function openPage(pageURL) {
+        window.location = pageURL;
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
